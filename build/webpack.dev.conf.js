@@ -1,9 +1,8 @@
+const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const commonConfig = require('./webpack.base.conf.js')
-const path = require('path')
-const WorkboxPlugin = require('workbox-webpack-plugin') // PWA 插件
-const WebpackPwaManifest = require('webpack-pwa-manifest')
+
 
 const devConfig = {
   mode: 'development',
@@ -52,38 +51,6 @@ const devConfig = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-     // 配置 PWA
-     new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true
-    }),
-    new WebpackPwaManifest({
-      name: 'My Progressive Web App',
-      short_name: 'MyPWA',
-      description: 'My awesome Progressive Web App!',
-      background_color: '#ffffff',
-      crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
-      ios:true,
-      icons: [
-        {
-          src: path.resolve('./src/assets/images/256.png'),
-          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
-          destination: path.join('icons', 'ios'),
-          ios: true
-        },
-        {
-          src: path.resolve('./src/assets/images/256.png'),
-          size: '1024x1024' ,// you can also use the specifications pattern
-          destination: path.join('icons', 'ios'),
-          ios: 'startup'
-        },
-        {
-          src: path.resolve('./src/assets/images/256.png'),
-          sizes: [36, 48, 72, 96, 144, 192, 512],
-          destination: path.join('icons', 'android')
-        }
-      ]
-    })
   ]
 }
 

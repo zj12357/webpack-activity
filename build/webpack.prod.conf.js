@@ -1,11 +1,8 @@
 const merge = require('webpack-merge')
 const commonConfig = require('./webpack.base.conf.js')
-const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // 将 css 单独打包成文件
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin') // 压缩 css
 
-const WorkboxPlugin = require('workbox-webpack-plugin') // PWA 插件
-const WebpackPwaManifest = require('webpack-pwa-manifest')
 
 const prodConfig = {
   mode: 'production',
@@ -62,38 +59,7 @@ const prodConfig = {
       cssProcessorOptions: { safe: true, discardComments: { removeAll: true } }, //传递给 cssProcessor 的选项，默认为{}
       canPrint: true //一个布尔值，指示插件是否可以将消息打印到控制台，默认为 true
     }),
-    // 配置 PWA
-    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true
-    }),
-    new WebpackPwaManifest({
-      name: 'My Progressive Web App',
-      short_name: 'MyPWA',
-      description: 'My awesome Progressive Web App!',
-      background_color: '#ffffff',
-      crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
-      ios:true,
-      icons: [
-        {
-          src: path.resolve('./src/assets/images/256.png'),
-          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
-          destination: path.join('icons', 'ios'),
-          ios: true
-        },
-        {
-          src: path.resolve('./src/assets/images/256.png'),
-          size: '1024x1024' ,// you can also use the specifications pattern
-          destination: path.join('icons', 'ios'),
-          ios: 'startup'
-        },
-        {
-          src: path.resolve('./src/assets/images/256.png'),
-          sizes: [36, 48, 72, 96, 144, 192, 512],
-          destination: path.join('icons', 'android')
-        }
-      ]
-    })
+  
   ]
 }
 
