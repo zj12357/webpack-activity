@@ -1,23 +1,69 @@
+$screen-sm-min:768px;
+$screen-md-min:992px;
+
 .app{
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  .title{
-    text-align: center;
-  }
-  .box{
-    display: none;
-    #btnInstall{
-      width: 75px;
-      height: 40px;
-      background: #007bff;
+  .wrapper-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: calc(var(--vh, 1vh)*100);
+    .content{
+      transform: translateY(100px);
+      width: 100%;
+      padding: 0 20px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      color: #ffffff;
+      flex-direction: column;
+      .title{
+
+        width: 260px;
+        span{
+          text-align: center;
+          margin: 0 auto 18px;
+          color: #fff;
+          background: hsla(0,0%,100%,.1);
+          border-radius: 100px;
+          line-height: 19.6px;
+          font-size: 14px;
+          font-weight: 400;
+          padding: 8px 10px;
+          display: block;
+        }
+        
+      } 
+      .title-icon{
+        width: 238px;
+        height: 84px;
+        background-image: url('../images/sport_logo.png');
+      }
     }
-  }
+    
+ }
+
 
 }
 
+
+
+/* 小屏幕（平板，小于等于 768px） */
+@media (max-width: $screen-sm-min) { 
+  .wrapper-container{
+    background-image: url('../images/H5_IP_district.png');
+ }
+}
+
+
+
+/* 中等屏幕（桌面显示器，大于等于 768px） */
+@media (min-width: $screen-sm-min) { 
+  .wrapper-container{
+    background-image: url('../images/Web_IP_district.png');
+ }
+}
