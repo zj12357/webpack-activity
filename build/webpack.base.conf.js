@@ -22,6 +22,11 @@ module.exports = {
         ]
       },
       {
+        test: /\.ts?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.(png|jpg|jpeg|gif)$/,
         use: [
           {
@@ -67,7 +72,7 @@ module.exports = {
   plugins: [
     // 开发环境和生产环境二者均需要的插件
     new HtmlWebpackPlugin({
-      title: 'PWA-demo',
+      title: '新利',
       filename: 'index.html',
       template: path.resolve(__dirname, '..', 'index.html'),
       minify: {

@@ -4,4 +4,4 @@ import "./assets/style/common.scss";
 import "./assets/font/iconfont.css";
 import "normalize.css";
 
-
+import './index.ts'
