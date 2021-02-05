@@ -79,6 +79,9 @@ $screen-md-min: 992px;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            &:hover{
+              background: hsla(0,0%,100%,.4);
+            }
           }
         }
       }
