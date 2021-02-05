@@ -7,17 +7,14 @@ $screen-md-min:992px;
   flex-direction: column;
   align-items: center;
   .wrapper-container{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    min-height: calc(var(--vh, 1vh)*100);
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: calc(var(--vh, 1vh)*100);
+    background-position: center;
     .content{
-      transform: translateY(100px);
       width: 100%;
-      padding: 0 20px;
+      padding: 100px 20px 0;
       display: flex;
       align-items: center;
       flex-direction: column;
