@@ -66,13 +66,20 @@ module.exports = {
             outputPath: 'fonts/'
           }
         }
-      }
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+        options: {
+          // Disables attributes processing
+          attributes: false,
+        },
+      },
     ]
   },
   plugins: [
     // 开发环境和生产环境二者均需要的插件
     new HtmlWebpackPlugin({
-      title: '新利',
       filename: 'index.html',
       template: path.resolve(__dirname, '..', 'index.html'),
       minify: {
