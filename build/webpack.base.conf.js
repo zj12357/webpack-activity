@@ -5,7 +5,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: './src/app.js'
+    app: './src/app.js',
+    index: './src/index.ts',
+    noAccess:'./src/noAccess.js'
   },
   output: {
     path: path.resolve(__dirname, '..', 'dist')
@@ -85,7 +87,17 @@ module.exports = {
       minify: {
         collapseWhitespace: true
       },
-      favicon: path.resolve(__dirname,'../src/assets/images','icon.png')
+      favicon: path.resolve(__dirname,'../src/assets/images','icon.png'),
+      chunks:['app','index']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'noAccess.html',
+      template: path.resolve(__dirname, '..', 'noAccess.html'),
+      minify: {
+        collapseWhitespace: true
+      },
+      favicon: path.resolve(__dirname,'../src/assets/images','icon.png'),
+      chunks:['app','noAccess']
     }),
     new webpack.ProvidePlugin({ $: 'jquery' }),
     new CleanWebpackPlugin()
