@@ -1,0 +1,41 @@
+$screen-md-min: 1200px;
+
+#app {
+  main {
+    position: relative;
+    background-color: #e6dbf4;
+    background-image: url(../images/bg/bg01.jpg), url(../images/bg/bg02.jpg),
+      url(../images/bg/bg03.jpg), url(../images/bg/bg04.jpg),
+      url(../images/bg/bg05.jpg), url(../images/bg/bg06.jpg),
+      url(../images/bg/bg07.jpg), url(../images/bg/bg08.jpg),
+      url(../images/bg/bg09.jpg), url(../images/bg/bg10.jpg);
+    background-position: center 0px, center 246px, center 492px, center 738px,
+      center 984px, center 1230px, center 1476px, center 1722px, center 1968px,
+      center 2214px;
+    background-size: 1920px 246px;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    .carousels {
+      padding-top: 770px;
+      .swiper-container {
+        width: 100%;
+      }
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 334px;
+        height: 459px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .details {
+      position: relative;
+      margin-top: 1475px;
+      padding-bottom: 120px;
+      color: #604695;
+    }
+  }
+}

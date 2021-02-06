@@ -85,7 +85,7 @@ module.exports = {
       minify: {
         collapseWhitespace: true
       },
-      favicon: path.resolve(__dirname,'../src/assets/images','favicon.ico')
+      favicon: path.resolve(__dirname,'../src/assets/images','icon.png')
     }),
     new webpack.ProvidePlugin({ $: 'jquery' }),
     new CleanWebpackPlugin()
