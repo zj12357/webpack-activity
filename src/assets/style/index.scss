@@ -49,8 +49,18 @@ $screen-md-min: 1200px;
           text-align:center;
           border: 1px solid #cccccc;
           background-color: #fff;
+          box-shadow: 3px 3px 6px #604695;
+          
           tr{
             height: 36px;
+          }
+          tr:nth-child(2n-1){
+            background-color: #9A82C6;
+            color: #fff;
+          }
+          tr:nth-child(2n){
+            background-color: #EDD6FF;
+            color: #604695;
           }
         }
         .activity-content{
