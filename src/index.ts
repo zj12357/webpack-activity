@@ -1,4 +1,3 @@
-import "./assets/style/index.scss";
 import "swiper/css/swiper.min.css";
 import Swiper from "swiper";
 
