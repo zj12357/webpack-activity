@@ -1,4 +1,4 @@
-import 'swiper/js/swiper.min.js'
+
 import "swiper/css/swiper.min.css";
 import Swiper from "swiper";
 var swiper = new Swiper(".swiper-container", {
@@ -9,7 +9,7 @@ var swiper = new Swiper(".swiper-container", {
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
-    depth: 600,
+    depth: 400,
     modifier: 1,
     slideShadows: true,
   },

@@ -18,7 +18,7 @@ $screen-md-min: 1200px;
     .carousels {
       padding-top: 770px;
       .swiper-container {
-        width: 100%;
+        width: 972px;
       }
       .swiper-slide {
         background-position: center;
@@ -32,10 +32,23 @@ $screen-md-min: 1200px;
       }
     }
     .details {
-      position: relative;
-      margin-top: 1475px;
+      margin-top: 1260px;
       padding-bottom: 120px;
       color: #604695;
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .decimal {
+          max-width: 1200px;
+          p {
+            margin: 4px;
+            em {
+              margin-right: 4px;
+            }
+          }
+        }
+      }
     }
   }
 }
