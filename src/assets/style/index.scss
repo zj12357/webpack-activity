@@ -1,87 +1,204 @@
+$screen-sm-min: 750px;
 $screen-md-min: 1200px;
 
-#app {
-  main {
-    position: relative;
-    background-color: #e6dbf4;
-    background-image: url(../images/bg/bg01.jpg), url(../images/bg/bg02.jpg),
-      url(../images/bg/bg03.jpg), url(../images/bg/bg04.jpg),
-      url(../images/bg/bg05.jpg),url(../images/bg/bg06.jpg),
-      url(../images/bg/bg07.jpg), url(../images/bg/bg08.jpg);
-    background-position: center 0px, center 246px, center 492px, center 738px,
-      center 984px,center 1230px, center 1476px, center 1722px,;
-    background-size: 1920px 246px;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    .carousels {
-      padding-top: 770px;
-      padding-bottom: 100px;
-      .swiper-container {
-        width: 972px;
-      }
-      .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 334px;
-        height: 459px;
-        img {
-          width: 100%;
-          height: 100%;
+@media (max-width: $screen-sm-min) {
+}
+@media screen and (max-width: $screen-md-min) {
+  #app {
+    main {
+      background-position: center 0vw, center 20.5vw, center 41vw, center 61.5vw,
+        center 82vw, center 102.5vw, center 123vw, center 143.5vw, center 164vw,
+        center 184.5vw;
+      background-size: 160vw 20.5vw;
+      .carousels {
+        padding-top: 61.66667vw;
+        .swiper-container {
+          margin: 0 2.5vw;
         }
       }
+      .activity-box {
+        margin-top: 59.91667vw;
+      }
     }
-    .activity-box{
-       margin-top: 730px;
-      .table-activity{
+  }
+}
+
+main {
+  position: relative;
+  background-color: #e6dbf4;
+  background-image: url(../images/bg/bg01.jpg), url(../images/bg/bg02.jpg),
+    url(../images/bg/bg03.jpg), url(../images/bg/bg04.jpg),
+    url(../images/bg/bg05.jpg), url(../images/bg/bg06.jpg),
+    url(../images/bg/bg07.jpg), url(../images/bg/bg08.jpg);
+  background-position: center 0px, center 246px, center 492px, center 738px,
+    center 984px, center 1230px, center 1476px, center 1722px;
+  background-size: 1920px 246px;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  .carousels {
+    padding-top: 770px;
+   
+    .swiper-container {
+      max-width: 1000px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 334px;
+      height: 459px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .activity-box {
+    margin-top: 730px;
+    background-image: url("../images/activity/big_bg.png");
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+    .table-activity {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      color: #333333;
+      margin-bottom: 40px;
+      margin-top: 40px;
+      .title {
+        color: #fff;
+        font-size: 24px;
+        background-image: url("../images/activity/title.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 346px;
+        height: 60px;
+        text-align: center;
+        line-height: 50px;
+        padding-left: 30px;
+      }
+
+      table {
+        width: 1000px;
+        text-align: center;
+        border: 1px solid #cccccc;
+        background-color: #fff;
+        box-shadow: 3px 3px 6px #604695;
+
+        tr {
+          height: 36px;
+        }
+        tr:nth-child(2n-1) {
+          background-color: #9a82c6;
+          color: #fff;
+        }
+        tr:nth-child(2n) {
+          background-color: #edd6ff;
+          color: #604695;
+        }
+      }
+      .activity-content {
+        width: 1000px;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        color: #333333;
-        margin-bottom: 40px;
-        .title{
-          color: #351c66;
-          font-size: 24px;
+        .content {
+          color: #604695;
+          text-align: left;
         }
-        
-        table{
-          width: 1000px;
-          text-align:center;
-          border: 1px solid #cccccc;
-          background-color: #fff;
-          box-shadow: 3px 3px 6px #604695;
-          
-          tr{
-            height: 36px;
-          }
-          tr:nth-child(2n-1){
-            background-color: #9A82C6;
-            color: #fff;
-          }
-          tr:nth-child(2n){
-            background-color: #EDD6FF;
-            color: #604695;
-          }
+        .rule {
+          margin-top: 10px;
+          text-align: left;
+          width: 100%;
+          margin-top: 20px;
         }
-        .activity-content{
-          width: 1000px;
-          display: flex;
-          justify-content: center;
-          flex-direction: column;
-          align-items: center;
-          .content{
-           color: #604695;
-           text-align: left;
-          }
-          .rule{
-            margin-top: 10px;
-          }
-        }
-        
-        
       }
     }
-    
-    
+    .card-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 1000px;
+      .activity-card {
+        background-image: url("../images/activity/card_bg.png");
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        width: 490px;
+        height: 300px;
+        
+        .title{
+          text-align: center;
+          color:#fff;
+        }
+        .content{
+          padding: 60px 20px;
+          color: #79B9F4;
+        }
+      }
+    }
+    .activety-ewm{
+      display: flex;
+      justify-content: space-between;
+      width: 1000px;
+       position: relative;
+       .left{
+         width: 270px;
+         img{
+           width: 100%;
+         }
+       }
+      .right{
+        padding-top: 80px;
+        .logo{
+          width: 500px;
+        }
+        .logo_text{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #9a82c6;
+          margin:60px 0 70px;
+          i{
+            width: 140px;
+            height: 2px;
+            background-color: #9a82c6;
+          }
+        }
+        .ewm{
+          display: flex;
+          justify-content:start;
+          margin-top: 80px;
+          .ios{
+            margin-right: 80px;
+          }
+          p{
+            color: #9a82c6;
+            width: 140px;
+            text-align: center;
+            margin-bottom: 8px; 
+          }
+        }
+      }
+      .top{
+        position: absolute;
+        right: 0;
+        bottom: 50px;
+        z-index: 10;
+        width: 50px;
+        cursor: pointer;
+        img{
+          width: 100%;
+        }
+      }
+    }
   }
 }

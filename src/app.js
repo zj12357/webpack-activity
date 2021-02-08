@@ -6,3 +6,34 @@ import "./assets/font/iconfont.css";
 import "./assets/style/normalize.css";
 
 import "./index.ts"
+import QRCode from 'qrcodejs2'
+
+// 回到顶部
+$(function(){
+    $('#btn_top').click(function () {
+        $('html,body').animate({ scrollTop: 0 }, 500);
+    });
+})
+
+
+let qrcodeUrl=window.location.href;
+
+
+let ios = new QRCode("qrcode-ios", {
+  text: qrcodeUrl,
+  width: 140,
+  height: 140,
+  colorDark : "#000000",
+  colorLight : "#ffffff",
+  correctLevel : QRCode.CorrectLevel.H
+});
+
+
+let android = new QRCode("qrcode-android", {
+  text: qrcodeUrl,
+  width: 140,
+  height: 140,
+  colorDark : "#000000",
+  colorLight : "#ffffff",
+  correctLevel : QRCode.CorrectLevel.H
+});

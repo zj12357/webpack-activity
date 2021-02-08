@@ -1,7 +1,8 @@
 import "swiper/css/swiper.min.css";
 import Swiper from "swiper";
 
-var swiper = new Swiper(".swiper-container", {
+
+let swiper = new Swiper(".swiper-container", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -20,3 +21,6 @@ var swiper = new Swiper(".swiper-container", {
     disableOnInteraction: false,
   },
 });
+
+
+
