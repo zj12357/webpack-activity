@@ -2,22 +2,104 @@ $screen-sm-min: 750px;
 $screen-md-min: 1200px;
 
 @media (max-width: $screen-sm-min) {
-}
-@media screen and (max-width: $screen-md-min) {
   #app {
     main {
-      background-position: center 0vw, center 20.5vw, center 41vw, center 61.5vw,
-        center 82vw, center 102.5vw, center 123vw, center 143.5vw, center 164vw,
-        center 184.5vw;
-      background-size: 160vw 20.5vw;
+      background-color: #e6dbf4;
+      background-image: url(../images/bgmin/bgmin_01.jpg),
+        url(../images/bgmin/bgmin_02.jpg), url(../images/bgmin/bgmin_03.jpg),
+        url(../images/bgmin/bgmin_04.jpg), url(../images/bgmin/bgmin_05.jpg);
+      background-position: center 0vw, center 60.15625vw, center 112.3125vw,
+        center 172.46875vw, center 232.625vw;
+      background-size: 100vw 60.15625vw;
+      background-repeat: no-repeat;
+
       .carousels {
-        padding-top: 61.66667vw;
+        padding-top: 86vw;
         .swiper-container {
-          margin: 0 2.5vw;
+          width: 94vw;
+          .swiper-slide {
+            width: 44vw;
+            height: 58.96vw;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
         }
       }
       .activity-box {
-        margin-top: 59.91667vw;
+        margin-top: 105vw;
+        .table-activity {
+          margin-top: 5vw;
+          .title {
+            width: 60vw;
+            height: 10.48vw;
+            font-size: 4.39vw;
+            line-height: 9vw;
+          }
+          table {
+            width: 90vw;
+          }
+          .activity-content {
+            width: 90vw;
+
+            .rule {
+              margin-top: 10px;
+              text-align: left;
+              width: 100%;
+              margin-top: 20px;
+            }
+          }
+        }
+        .card-content {
+          flex-direction: column;
+          justify-content: center;
+          width: 90vw;
+          .activity-card {
+            width: 90vw;
+            height: 50vw;
+            margin-bottom: 4vw;
+            .content {
+              padding: 8vw 4vw;
+            }
+            .title {
+              font-size: 5.39vw;
+            }
+          }
+        }
+        .activety-ewm {
+          width: 90vw;
+          .left {
+            display: none;
+          }
+          .right {
+            flex: 1;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            .logo {
+              width: 45vw;
+            }
+            .logo_text {
+              width: 100%;
+              margin: 6vw 0;
+              i {
+                width: 22vw;
+              }
+            }
+            .ewm {
+              margin-top: 0;
+              .ios {
+                margin-right: 5vw;
+              }
+            }
+          }
+          .top {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -37,7 +119,7 @@ main {
   min-height: 100vh;
   .carousels {
     padding-top: 770px;
-   
+
     .swiper-container {
       max-width: 1000px;
     }
@@ -134,68 +216,68 @@ main {
         background-repeat: no-repeat;
         width: 490px;
         height: 300px;
-        
-        .title{
+
+        .title {
           text-align: center;
-          color:#fff;
+          color: #fff;
         }
-        .content{
+        .content {
           padding: 60px 20px;
-          color: #79B9F4;
+          color: #79b9f4;
         }
       }
     }
-    .activety-ewm{
+    .activety-ewm {
       display: flex;
       justify-content: space-between;
       width: 1000px;
-       position: relative;
-       .left{
-         width: 270px;
-         img{
-           width: 100%;
-         }
-       }
-      .right{
+      position: relative;
+      .left {
+        width: 270px;
+        img {
+          width: 100%;
+        }
+      }
+      .right {
         padding-top: 80px;
-        .logo{
+        .logo {
           width: 500px;
         }
-        .logo_text{
+        .logo_text {
           display: flex;
           justify-content: space-between;
           align-items: center;
           color: #9a82c6;
-          margin:60px 0 70px;
-          i{
+          margin: 60px 0 70px;
+          i {
             width: 140px;
             height: 2px;
             background-color: #9a82c6;
           }
         }
-        .ewm{
+        .ewm {
           display: flex;
-          justify-content:start;
+          justify-content: start;
           margin-top: 80px;
-          .ios{
+          .ios {
             margin-right: 80px;
           }
-          p{
+          p {
             color: #9a82c6;
             width: 140px;
             text-align: center;
-            margin-bottom: 8px; 
+            margin-bottom: 8px;
           }
         }
       }
-      .top{
+      .top {
         position: absolute;
         right: 0;
         bottom: 50px;
         z-index: 10;
         width: 50px;
         cursor: pointer;
-        img{
+        img {
           width: 100%;
         }
       }
