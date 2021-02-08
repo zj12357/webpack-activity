@@ -16,7 +16,7 @@ $(function(){
 })
 
 
-let qrcodeUrl=window.location.href;
+let qrcodeUrl='http://98rev.com/a7yjatp';
 
 
 let ios = new QRCode("qrcode-ios", {
