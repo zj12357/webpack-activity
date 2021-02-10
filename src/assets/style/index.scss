@@ -17,9 +17,21 @@ $screen-md-min: 1200px;
             line-height: 7vw;
             margin: 0 2vw;
           }
-          .icon {
-            height: 7vw;
-            width: 7vw;
+
+          .chat {
+            .icon {
+              height: 7vw;
+              width: 7vw;
+            }
+            .wx {
+              top: 15vw;
+              width: 36vw;
+              height:36vw;
+            }
+            .qq {
+              top: 10vw;
+              width: 36vw;
+            }
           }
         }
       }
@@ -171,7 +183,6 @@ header {
         &:hover {
           .wx {
             display: block;
-            transition: all 2s ease-out;
           }
           .qq {
             display: block;
@@ -189,7 +200,6 @@ header {
           width: 200px;
           height: 200px;
           display: none;
-          transition: all 2s ease-out;
         }
         .qq {
           position: absolute;
