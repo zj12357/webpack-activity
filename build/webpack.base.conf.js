@@ -2,24 +2,22 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const WebpackBar = require('webpackbar');
 
 module.exports = {
   entry: {
     app: './src/app.js'
   },
-  output: {
-    path: path.resolve(__dirname, '..', 'dist')
+  output:{
+    path:path.resolve(__dirname,'../dist'),
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader'
-          }
-        ]
+        use: [{
+          loader: 'babel-loader'
+        }]
       },
       {
         test: /\.ts?$/,
@@ -28,8 +26,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
-        use: [
-          {
+        use: [{
             loader: 'url-loader',
             options: {
               name: '[name]-[hash:5].min.[ext]',
@@ -79,15 +76,18 @@ module.exports = {
   },
   plugins: [
     // 开发环境和生产环境二者均需要的插件
+    new WebpackBar(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '..', 'index.html'),
       minify: {
         collapseWhitespace: true
       },
-      favicon: path.resolve(__dirname,'../src/assets/images','icon.png')
+      favicon: path.resolve(__dirname, '../src/assets/images', 'icon.png')
     }),
-    new webpack.ProvidePlugin({ $: 'jquery' }),
+    new webpack.ProvidePlugin({
+      $: 'jquery'
+    }),
     new CleanWebpackPlugin()
   ],
   performance: false
