@@ -3,26 +3,32 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const WebpackBar = require('webpackbar');
+const HappyPack = require('happypack');
+let os = require('os')
+const happyThreadPool = HappyPack.ThreadPool({
+  size: os.cpus().length 
+});
 
 module.exports = {
   entry: {
     app: './src/app.js'
   },
-  output:{
-    path:path.resolve(__dirname,'../dist'),
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+  },
+  resolve: {
+    extensions: [".ts", ".js",".css",".scss"],
   },
   module: {
     rules: [{
-        test: /\.js$/,
+        test: /\.(js|ts)$/,
         exclude: /node_modules/,
-        use: [{
-          loader: 'babel-loader'
-        }]
+        use: ['happypack/loader?id=babel'],
       },
+    
       {
-        test: /\.ts?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        test: /\.(sa|sc|c)ss$/,
+        use: ['happypack/loader?id=styles'],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
@@ -77,6 +83,27 @@ module.exports = {
   plugins: [
     // 开发环境和生产环境二者均需要的插件
     new WebpackBar(),
+    new HappyPack({
+      id: 'babel',
+      loaders: ['babel-loader?cacheDirectory'],
+      threadPool: happyThreadPool
+    }),
+    new HappyPack({
+      id: 'styles',
+      loaders: ['style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2, // 在一个 css 中引入了另一个 css，也会执行之前两个 loader，即 postcss-loader 和 sass-loader
+            sourceMap: true
+          }
+        },
+        'postcss-loader', // 使用 postcss 为 css 加上浏览器前缀
+        'sass-loader' // 使用 sass-loader 将 scss 转为 css
+      ],
+      threadPool: happyThreadPool
+    }),
+
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '..', 'index.html'),
